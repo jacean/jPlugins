@@ -1,0 +1,80 @@
+.jCheckBox_No{
+	background-image: url(../res/checkNo.png);
+    background-repeat: no-repeat;
+	background-size:100% 100%;
+    width: 12px;
+    height: 12px;
+    min-width: 12px;
+    min-height: 12px;
+	display:inline-block;
+}
+.jCheckBox_NoOn{
+	background-image: url(../res/checkNoOn.png);
+    background-repeat: no-repeat;
+	background-size:100% 100%;
+    width: 12px;
+    height: 12px;
+    min-width: 12px;
+    min-height: 12px;
+	display:inline-block;
+}
+.jCheckBox_On{
+	background-image: url(../res/checkOn.png);
+    background-repeat: no-repeat;
+	background-size:100% 100%;
+    width: 12px;
+    height: 12px;
+    min-width: 12px;
+    min-height: 12px;
+	display:inline-block;
+}
+.jCheckBox_Off{
+	background-image: url(../res/checkOff.png);
+    background-repeat: no-repeat;
+	background-size:100% 100%;
+    width: 12px;
+    height: 12px;
+    min-width: 12px;
+    min-height: 12px;
+	display:inline-block;
+}
+.jRadio_No{
+	background-image: url(../res/radioNo.png);
+    background-repeat: no-repeat;
+	background-size:100% 100%;
+    width: 12px;
+    height: 12px;
+    min-width: 12px;
+    min-height: 12px;
+	display:inline-block;
+}
+.jRadio_NoOn{
+	background-image: url(../res/radioNoOn.png);
+    background-repeat: no-repeat;
+	background-size:100% 100%;
+    width: 12px;
+    height: 12px;
+    min-width: 12px;
+    min-height: 12px;
+	display:inline-block;
+}
+.jRadio_On{
+	background-image: url(../res/radioOn.png);
+    background-repeat: no-repeat;
+	background-size:100% 100%;
+    width: 12px;
+    height: 12px;
+    min-width: 12px;
+    min-height: 12px;
+	display:inline-block;
+}
+.jRadio_Off{
+	background-image: url(../res/radioOff.png);
+    background-repeat: no-repeat;
+	background-size:100% 100%;
+    width: 12px;
+    height: 12px;
+    min-width: 12px;
+    min-height: 12px;
+	display:inline-block;
+}

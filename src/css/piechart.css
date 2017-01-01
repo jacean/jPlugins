@@ -1,0 +1,22 @@
+.pie-container{
+    position: relative;
+}
+.pie-tooltip{
+    position: absolute;
+    border-radius: 10px;
+    border-color: gray;
+    border: 1px solid;
+    background-color: white;
+    z-index: 99;
+    opacity: 0.8;
+    padding: 10px;
+}
+.pie-title{
+
+}
+.pie-percent{
+
+}
+.pie-tip{
+
+}

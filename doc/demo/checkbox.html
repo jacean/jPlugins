@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>checkbox</title>
+    <script src="../../src/js/lib/require.js" defer async="true" data-main="../../src/js/mainV1.3.2"></script>
+    <link rel="stylesheet" type="text/css" href="../css/jCheckBox.css" />
+</head>
+
+<body>
+
+    <form class="form" method="post">
+        <span>33Which genres do you like?</span>
+        <input type="checkbox" value="action" id="check-1" name="genre">Action / Adventure
+        <input type="checkbox" value="comedy" id="check-2" name="genre" disabled checked>Comedy
+        <input type="checkbox" value="epic" id="check-3" name="genre"><label for="check-3" class="">Epic / Historical</label>
+        <input type="checkbox" value="science" id="check-4" name="genre"><label for="check-4" class="">Science Fiction</label>
+        <input type="checkbox" value="romance" id="check-5" name="genre"><label for="check-5" class="">Romance</label>
+        <input type="checkbox" value="western" id="check-6" name="genre"><label for="check-6" class="">Western</label>
+        <span>Caddyshack is the greatest movie of all time, right?</span>
+        <input type="radio" value="1" id="radio-1" name="opinions"><label for="radio-1" class="">Totally</label>
+        <input type="radio" value="1" id="radio-2" checked name="opinions" disabled><label for="radio-2" class="">You must be kidding</label>
+        <input type="radio" value="1" id="radio-3" name="opinions"><label for="radio-3" class="">What's Caddyshack?</label>
+
+
+        <input type=text style="width:100%" id="cc"/>
+<input type=text style="width:100%" id="rr"/>
+
+<input type=button value="test" onclick="test();"/>
+</form>
+<div>
+<input type="radio" value="1" name="aa" id="aa1">1
+<input type="radio" disabled checked value="2" name="aa" id="aa2">2
+<input type="radio" value="3" name="aa" id="aa3">3
+<input type="radio" value="4" name="aa" id="aa4">4
+
+</div>
+
+<script type="text/javascript">
+    function test() {
+        document.getElementById('jCR_radio-1').click();
+        //		document.getElementById('radio-2').checked = !document.getElementById('radio-2').checked;
+    }
+    function chkdata() {
+        var v = '';
+        if (document.getElementById('check-1').checked) { v += 'action '; }
+        if (document.getElementById('check-2').checked) { v += 'comedy '; }
+        if (document.getElementById('check-3').checked) { v += 'epic '; }
+        if (document.getElementById('check-4').checked) { v += 'science '; }
+        if (document.getElementById('check-5').checked) { v += 'romance '; }
+        if (document.getElementById('check-6').checked) { v += 'western '; }
+        $('#cc').val(v);
+
+        v = '';
+        if (document.getElementById('radio-1').checked) { v += 'Total '; }
+        if (document.getElementById('radio-2').checked) { v += 'Kidding '; }
+        if (document.getElementById('radio-3').checked) { v += 'Caddy '; }
+        $('#rr').val(v);
+
+        setTimeout(chkdata, 100);
+    }
+    setTimeout(chkdata, 100);
+
+    // jUI.radio.init();
+    jUI.checkbox("[type=checkbox]");
+    jUI.radiobox("[type=radio]");
+</script>
+</body>
+
+</html>
