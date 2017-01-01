@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <title>checkbox</title>
     <script src="../../src/js/lib/require.js" defer async="true" data-main="../../src/js/mainV1.3.2"></script>
-    <link rel="stylesheet" type="text/css" href="../css/jCheckBox.css" />
+    <link rel="stylesheet" type="text/css" href="../../src/css/checkbox.css" />
 </head>
 
 <body>
@@ -30,41 +30,34 @@
 <input type=button value="test" onclick="test();"/>
 </form>
 <div>
-<input type="radio" value="1" name="aa" id="aa1">1
-<input type="radio" disabled checked value="2" name="aa" id="aa2">2
-<input type="radio" value="3" name="aa" id="aa3">3
-<input type="radio" value="4" name="aa" id="aa4">4
+    <input type="radio" value="1" name="aa" id="aa1">1
+    <input type="radio" disabled checked value="2" name="aa" id="aa2">2
+    <input type="radio" value="3" name="aa" id="aa3">3
+    <input type="radio" value="4" name="aa" id="aa4">4
 
 </div>
 
 <script type="text/javascript">
-    function test() {
-        document.getElementById('jCR_radio-1').click();
-        //		document.getElementById('radio-2').checked = !document.getElementById('radio-2').checked;
+
+    function loadWait() {
+        if (typeof requireV1 == "undefined") {
+            setTimeout("loadWait()", 100);
+        } else {
+            requireV1(['jquery', 'checkbox'], function ($, piechart) {
+                if (document.readyState == "complete") {//当页面加载状态 
+                    jUI.checkbox("[type=checkbox]");
+                    jUI.radiobox("[type=radio]");
+                } else {
+                    $(document).ready(function () {
+                        jUI.checkbox("[type=checkbox]");
+                        jUI.radiobox("[type=radio]");
+                    });
+                }
+
+            });
+        }
     }
-    function chkdata() {
-        var v = '';
-        if (document.getElementById('check-1').checked) { v += 'action '; }
-        if (document.getElementById('check-2').checked) { v += 'comedy '; }
-        if (document.getElementById('check-3').checked) { v += 'epic '; }
-        if (document.getElementById('check-4').checked) { v += 'science '; }
-        if (document.getElementById('check-5').checked) { v += 'romance '; }
-        if (document.getElementById('check-6').checked) { v += 'western '; }
-        $('#cc').val(v);
-
-        v = '';
-        if (document.getElementById('radio-1').checked) { v += 'Total '; }
-        if (document.getElementById('radio-2').checked) { v += 'Kidding '; }
-        if (document.getElementById('radio-3').checked) { v += 'Caddy '; }
-        $('#rr').val(v);
-
-        setTimeout(chkdata, 100);
-    }
-    setTimeout(chkdata, 100);
-
-    // jUI.radio.init();
-    jUI.checkbox("[type=checkbox]");
-    jUI.radiobox("[type=radio]");
+    loadWait();
 </script>
 </body>
 

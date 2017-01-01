@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <title>piechart</title>
-    <script src="../lib/require.js" defer async="true" data-main="../js/mainV1.3.2"></script>
-    <link rel="stylesheet" href="../css/piechart.css">
+    <script src="../../src/js/lib/require.js" defer async="true" data-main="../../src/js/mainV1.3.2"></script>
+    <link rel="stylesheet" href="../../src/css/piechart.css">
 </head>
 <script>
     var dataArray = [{
@@ -30,9 +30,37 @@
         tip: "我是第si个"
     }];
 
+    function loadWait() {
+        if (typeof requireV1 == "undefined") {
+            setTimeout("loadWait()", 100);
+        } else {
+            requireV1(['jquery', 'piechart'], function ($, piechart) {
+                if (document.readyState == "complete") {//当页面加载状态 
+                    $("#piechart").piechart({
+                        width: 300,
+                        height: 300,
+                        dataArray: dataArray,
+                        tooltip: true
+                    });
+                } else {
+                    $(document).ready(function () {
+                        $("#piechart").piechart({
+                            width: 300,
+                            height: 300,
+                            dataArray: dataArray,
+                            tooltip: true
+                        });
+                    });
+                }
+
+            });
+        }
+    }
+    loadWait();
+
 </script>
 
-<body >
+<body>
     <div> 饼图 </div>
     <div id="piechart">
 
